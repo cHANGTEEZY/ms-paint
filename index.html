@@ -3,23 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MS Paint Clone</title>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Ms Paint</h1>
-      </nav>
-    </header>
-    <main>
-      <canvas
-        id="canvas"
-        height="400"
-        width="600"
-        class="drawing-board"
-      ></canvas>
-    </main>
-    <script src="./src/main.js"></script>
+    <div class="ms-paint">
+      <header class="menu-bar">
+        <div class="title-bar">
+          <h1>MS Paint</h1>
+          <div class="window-controls">
+            <button type="button" id="minimize" class="minimize">_</button>
+            <button type="button" id="maximize" class="maximize">□</button>
+            <button type="button" id="close" class="close">×</button>
+          </div>
+        </div>
+        <nav class="menu-items">
+          <ul>
+            <li>File</li>
+            <li>Edit</li>
+            <li>View</li>
+            <li>Image</li>
+            <li>Colors</li>
+            <li>Help</li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="toolbar">
+        <div class="tools">
+          <div class="tool" title="Free-form Select">
+            <div class="tool-icon select-icon"></div>
+          </div>
+          <div class="tool active" title="Pencil">
+            <div class="tool-icon pencil-icon"></div>
+          </div>
+          <div class="tool" title="Fill with Color">
+            <div class="tool-icon fill-icon"></div>
+          </div>
+          <div class="tool" title="Text">
+            <div class="tool-icon text-icon">A</div>
+          </div>
+          <div class="tool" title="Line">
+            <div class="tool-icon line-icon"></div>
+          </div>
+          <div class="tool" title="Rectangle">
+            <div class="tool-icon rectangle-icon"></div>
+          </div>
+          <div class="tool" title="Ellipse">
+            <div class="tool-icon ellipse-icon"></div>
+          </div>
+          <div class="tool" title="Eraser">
+            <div class="tool-icon eraser-icon"></div>
+          </div>
+        </div>
+
+        <div class="brush-sizes">
+          <div class="brush-size active"></div>
+          <div class="brush-size"></div>
+          <div class="brush-size"></div>
+          <div class="brush-size"></div>
+        </div>
+      </div>
+
+      <main class="workspace">
+        <section class="color-section">
+          <div class="color-palette">
+            <div class="color black" title="Black"></div>
+            <div class="color dark-gray" title="Dark Gray"></div>
+            <div class="color red" title="Red"></div>
+            <div class="color orange" title="Orange"></div>
+            <div class="color yellow" title="Yellow"></div>
+            <div class="color green" title="Green"></div>
+            <div class="color blue" title="Blue"></div>
+            <div class="color purple" title="Purple"></div>
+            <div class="color pink" title="Pink"></div>
+            <div class="color brown" title="Brown"></div>
+            <div class="color white" title="White"></div>
+            <div class="color light-gray" title="Light Gray"></div>
+            <div class="color dark-red" title="Dark Red"></div>
+            <div class="color dark-orange" title="Dark Orange"></div>
+            <div class="color dark-yellow" title="Dark Yellow"></div>
+            <div class="color dark-green" title="Dark Green"></div>
+            <div class="color dark-blue" title="Dark Blue"></div>
+            <div class="color dark-purple" title="Dark Purple"></div>
+            <div class="color dark-pink" title="Dark Pink"></div>
+            <div class="color dark-brown" title="Dark Brown"></div>
+          </div>
+
+          <div class="current-colors">
+            <div class="primary-color" title="Primary Color (Left click)"></div>
+            <div
+              class="secondary-color"
+              title="Secondary Color (Right click)"
+            ></div>
+          </div>
+        </section>
+
+        <section class="canvas-section">
+          <div class="canvas-container">
+            <canvas id="canvas" class="drawing-board"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <footer class="status-bar">
+        <div class="coordinates">x: 0, y: 0</div>
+        <div class="canvas-size"></div>
+      </footer>
+    </div>
   </body>
 </html>
