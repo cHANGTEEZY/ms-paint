@@ -1,0 +1,10 @@
+:root {
+  --radius: 14px;
+  --primary-bg-color: rgb(193, 184, 184);
+  --secondary-bg-color: white;
+}
+
+.drawing-board {
+  border: 1px solid black;
+  border-radius: 10px;
+}
