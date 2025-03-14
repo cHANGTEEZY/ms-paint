@@ -87,7 +87,3 @@ document.addEventListener("click", (e) => {
     setColor(newColor);
   }
 });
-
-document.addEventListener("mousedown", () => {
-  console.log("mouse down");
-});

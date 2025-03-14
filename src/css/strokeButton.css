@@ -1,0 +1,19 @@
+.stroke-size {
+  display: flex;
+  gap: 10px;
+}
+
+.stroke-button {
+  padding: 0.6em;
+  border: none;
+  width: 30px;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 5px -1px rgb(139, 137, 137);
+  transition: box-shadow ease-in 100ms;
+}
+
+.stroke-button:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px -1px rgb(48, 47, 47);
+}
