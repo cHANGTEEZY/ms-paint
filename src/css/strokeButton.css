@@ -1,13 +1,14 @@
 .stroke-size {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
 }
 
 .stroke-button {
   text-align: center;
-  padding: 0.54em 2rem;
   border: none;
-  width: 30px;
+  width: 70px;
+  height: 30px;
   background-color: white;
   border-radius: 0.6rem;
   box-shadow: 1px 1px 5px -1px rgb(139, 137, 137);

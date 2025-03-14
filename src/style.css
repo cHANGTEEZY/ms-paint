@@ -10,14 +10,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  overflow: scroll;
 }
 
-/* MS Paint container */
 .ms-paint {
-  width: 1200px;
-  height: 900px;
+  height: 100vh;
   background-color: #f0f0f0;
   border: 1px solid #999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -84,14 +82,20 @@ body {
   background-color: #e5f1fb;
 }
 
+.canvas-controllers {
+  display: flex;
+  gap: 20px;
+  padding: 0 2rem;
+  justify-content: flex-start;
+  align-items: start;
+}
+
 .workspace {
-  display: grid;
-  background-color: #f0f0f0;
+  margin-top: 1rem;
+  display: flex;
   overflow: hidden;
   gap: 20px;
 }
-
-/* Color section */
 
 .canvas-section {
   flex-grow: 1;
