@@ -1,6 +1,6 @@
 const canvas = document.getElementById("canvas");
 const coordinates = document.getElementById("coordinates");
-const ctx = canvas.getContext("2d");
+export const ctx = canvas.getContext("2d");
 
 //initial canvas settings
 canvas.width = 1200;
@@ -21,6 +21,9 @@ function setupContext() {
 
 function startDrawing(e) {
   isDrawing = true;
+
+  coordinates.innerHTML = `x: ${e.offsetX}, y: ${e.offsetY}`;
+
   lastX = e.offsetX;
   lastY = e.offsetY;
 
@@ -56,9 +59,13 @@ function stopDrawing() {
   isDrawing = false;
 }
 
-function setColor(newColor) {
-  currentColor = newColor;
+export function setColor(newColor) {
   ctx.strokeStyle = newColor;
+}
+
+export function setStroke(newStroke) {
+  const intStroke = parseInt(newStroke);
+  ctx.lineWidth = intStroke;
 }
 
 function cleanUp() {
@@ -79,11 +86,3 @@ function init() {
 }
 
 init();
-
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".color")) {
-    const colorElement = e.target.closest(".color");
-    const newColor = colorElement.style.backgroundColor;
-    setColor(newColor);
-  }
-});

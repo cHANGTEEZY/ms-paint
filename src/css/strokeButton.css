@@ -4,11 +4,12 @@
 }
 
 .stroke-button {
-  padding: 0.6em;
+  text-align: center;
+  padding: 0.54em 2rem;
   border: none;
   width: 30px;
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 0.6rem;
   box-shadow: 1px 1px 5px -1px rgb(139, 137, 137);
   transition: box-shadow ease-in 100ms;
 }
