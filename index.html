@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MS Paint Clone</title>
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/css/color.css" />
   </head>
   <body>
     <div class="ms-paint">
@@ -31,28 +32,15 @@
 
       <main class="workspace">
         <section class="color-section">
-          <div class="color-palette">
-            <div class="color black" title="Black"></div>
-            <div class="color dark-gray" title="Dark Gray"></div>
-            <div class="color red" title="Red"></div>
-            <div class="color orange" title="Orange"></div>
-            <div class="color yellow" title="Yellow"></div>
-            <div class="color green" title="Green"></div>
-            <div class="color blue" title="Blue"></div>
-            <div class="color purple" title="Purple"></div>
-            <div class="color pink" title="Pink"></div>
-            <div class="color brown" title="Brown"></div>
-            <div class="color white" title="White"></div>
-            <div class="color light-gray" title="Light Gray"></div>
-            <div class="color dark-red" title="Dark Red"></div>
-            <div class="color dark-orange" title="Dark Orange"></div>
-            <div class="color dark-yellow" title="Dark Yellow"></div>
-            <div class="color dark-green" title="Dark Green"></div>
-            <div class="color dark-blue" title="Dark Blue"></div>
-            <div class="color dark-purple" title="Dark Purple"></div>
-            <div class="color dark-pink" title="Dark Pink"></div>
-            <div class="color dark-brown" title="Dark Brown"></div>
-          </div>
+          <div class="color-palette" id="color-palette"></div>
+        </section>
+
+        <section class="stroke-section">
+          <div class="stroke-size" id="stroke-size"></div>
+          <button type="button" class="stroke-button">hello</button>
+          <button type="button" class="stroke-button">hello</button>
+          <button type="button" class="stroke-button">hello</button>
+          <button type="button" class="stroke-button">hello</button>
         </section>
 
         <section class="canvas-section">
@@ -63,9 +51,11 @@
       </main>
 
       <footer class="status-bar">
-        <div class="coordinates">x: 0, y: 0</div>
+        <div class="coordinates" id="coordinates"></div>
         <div class="canvas-size"></div>
       </footer>
     </div>
+    <script src="./src/main.js" type="module"></script>
+    <script src="./src/js/canvas/drawOnCanvas.js" type="module"></script>
   </body>
 </html>

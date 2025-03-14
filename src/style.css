@@ -84,123 +84,15 @@ body {
   background-color: #e5f1fb;
 }
 
-/* Workspace */
 .workspace {
-  display: flex;
-  /* flex-direction: column; */
-  /* flex-grow: 1; */
+  display: grid;
   background-color: #f0f0f0;
   overflow: hidden;
+  gap: 20px;
 }
 
 /* Color section */
-.color-section {
-  padding: 5px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #d1d1d1;
-}
 
-.color-palette {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
-  margin-bottom: 5px;
-}
-
-.color {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #999;
-  cursor: pointer;
-}
-
-.color:hover {
-  border: 1px solid #000;
-}
-
-.black {
-  background-color: #000000;
-}
-.dark-gray {
-  background-color: #7f7f7f;
-}
-.red {
-  background-color: #ff0000;
-}
-.orange {
-  background-color: #ff7f00;
-}
-.yellow {
-  background-color: #ffff00;
-}
-.green {
-  background-color: #00ff00;
-}
-.blue {
-  background-color: #0000ff;
-}
-.purple {
-  background-color: #7f00ff;
-}
-.pink {
-  background-color: #ff00ff;
-}
-.brown {
-  background-color: #7f3f00;
-}
-.white {
-  background-color: #ffffff;
-}
-.light-gray {
-  background-color: #c0c0c0;
-}
-.dark-red {
-  background-color: #7f0000;
-}
-.dark-orange {
-  background-color: #7f3f00;
-}
-.dark-yellow {
-  background-color: #7f7f00;
-}
-.dark-green {
-  background-color: #007f00;
-}
-.dark-blue {
-  background-color: #00007f;
-}
-.dark-purple {
-  background-color: #3f007f;
-}
-.dark-pink {
-  background-color: #7f007f;
-}
-.dark-brown {
-  background-color: #3f1f00;
-}
-
-.current-colors {
-  display: flex;
-  margin-top: 5px;
-}
-
-.primary-color,
-.secondary-color {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #999;
-  margin-right: 5px;
-}
-
-.primary-color {
-  background-color: #000000;
-}
-
-.secondary-color {
-  background-color: #ffffff;
-}
-
-/* Canvas section */
 .canvas-section {
   flex-grow: 1;
   padding: 10px;
@@ -217,8 +109,6 @@ body {
 }
 
 .drawing-board {
-  width: 1200px;
-  height: 1400px;
   background-color: white;
   cursor: crosshair;
 }
@@ -232,17 +122,4 @@ body {
   border-top: 1px solid #d1d1d1;
   font-size: 12px;
   color: #555;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1000px) {
-  .ms-paint {
-    width: 100%;
-    height: 100vh;
-  }
-
-  .drawing-board {
-    width: 100%;
-    height: auto;
-  }
 }
