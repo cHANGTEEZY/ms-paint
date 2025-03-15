@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas");
+export const canvas = document.getElementById("canvas");
 const coordinates = document.getElementById("coordinates");
 export const ctx = canvas.getContext("2d");
 
@@ -10,8 +10,8 @@ canvas.height = 2000;
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
-let currentColor = "#000000";
 let lineWidth = 2;
+let isErasing = false;
 
 function setupContext() {
   ctx.lineJoin = "round";
@@ -21,14 +21,14 @@ function setupContext() {
 
 function startDrawing(e) {
   isDrawing = true;
-
   coordinates.innerHTML = `x: ${e.offsetX}, y: ${e.offsetY}`;
-
   lastX = e.offsetX;
   lastY = e.offsetY;
 
   const x = e.offsetX;
   const y = e.offsetY;
+
+  ctx.globalCompositeOperation = isErasing ? "destination-out" : "source-over";
 
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
@@ -57,6 +57,10 @@ function draw(e) {
 
 function stopDrawing() {
   isDrawing = false;
+}
+
+export function toggleIsErasing() {
+  isErasing = !isErasing;
 }
 
 export function setColor(newColor) {

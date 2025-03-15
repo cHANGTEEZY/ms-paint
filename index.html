@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/css/color.css" />
     <link rel="stylesheet" href="./src/css/strokeButton.css" />
+    <link rel="stylesheet" href="./src/css/toggleButton.css" />
+    <link rel="stylesheet" href="./src/css/canvas.css" />
   </head>
   <body>
     <div class="ms-paint">
@@ -41,6 +43,20 @@
           <h1>Stroke Size</h1>
           <div class="stroke-size" id="stroke-size"></div>
         </section>
+
+        <section>
+          <h1>Erase Mode</h1>
+          <div class="toggle-div" id="toggle-button">
+            <div class="toggle-content" id="toggle-circle"></div>
+          </div>
+        </section>
+
+        <section>
+          <h1>Clear Screen</h1>
+          <button type="button" class="clear-button" id="clear-canvas">
+            Clear
+          </button>
+        </section>
       </section>
       <main class="workspace">
         <section class="canvas-section">
@@ -58,5 +74,7 @@
     <script src="./src/main.js" type="module"></script>
     <script src="./src/js/canvas/drawOnCanvas.js" type="module"></script>
     <script src="./src/js/canvas/canvasButtons.js" type="module"></script>
+    <script src="./src/js/canvas/eraseDrawOnCanvas.js" type="module"></script>
+    <script src="./src/js/canvas/clearCanvas.js" type="module"></script>
   </body>
 </html>

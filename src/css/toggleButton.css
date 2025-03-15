@@ -1,0 +1,48 @@
+.toggle-div {
+  height: 25px;
+  width: 50px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  background-color: #ff0000;
+  transition: background 0.3s;
+}
+
+.toggle-div:hover {
+  cursor: pointer;
+}
+
+.toggle-content {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  outline: 2px solid red;
+  transition: all ease 200ms;
+}
+
+.toggle-content.active {
+  transform: translateX(25px);
+  background-color: white;
+  outline: 2px solid green;
+}
+
+.toggle-div.active {
+  background-color: #4caf50;
+}
+
+.clear-button {
+  padding: 0.6rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  transition: all ease-out 200ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 1px 4px 1px red;
+  }
+}
