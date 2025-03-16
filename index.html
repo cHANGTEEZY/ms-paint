@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MS Paint Clone</title>
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
     <link rel="stylesheet" href="./src/css/color.css" />
     <link rel="stylesheet" href="./src/css/strokeButton.css" />
     <link rel="stylesheet" href="./src/css/toggleButton.css" />
@@ -23,12 +24,24 @@
         </div>
         <nav class="menu-items">
           <ul>
-            <li>File</li>
-            <li>Edit</li>
-            <li>View</li>
-            <li>Image</li>
-            <li>Colors</li>
-            <li>Help</li>
+            <li>
+              File
+              <ul class="dropdown">
+                <li id="save">Save</li>
+              </ul>
+            </li>
+            <li>
+              View
+              <ul class="dropdown">
+                <li id="toolbar">Toolbars</li>
+              </ul>
+            </li>
+            <li>
+              Help
+              <ul class="dropdown">
+                <li>Heloo</li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </header>
@@ -76,5 +89,6 @@
     <script src="./src/js/canvas/canvasButtons.js" type="module"></script>
     <script src="./src/js/canvas/eraseDrawOnCanvas.js" type="module"></script>
     <script src="./src/js/canvas/clearCanvas.js" type="module"></script>
+    <script src="./src/js/header/showToolbar.js"></script>
   </body>
 </html>
