@@ -9,18 +9,20 @@ import {
 } from "./js/canvas/drawOnCanvas";
 import { generateImage } from "./js/canvas/generateImage";
 import { generateColorSelectors } from "./js/color/colorsSelectorGenerator";
+import { toggleToolBar } from "./js/header/showToolbar";
 import { generateStrokeButtons } from "./js/stroke/setStrokeSize";
 
 const downloadImage = document.getElementById("save");
+const toggleToolbar = document.getElementById("toolbar");
+const coordinates = document.getElementById("coordinates");
 
 function cleanUp() {
   canvas.removeEventListener("mousedown", startDrawing);
   canvas.removeEventListener("mousemove", draw);
   canvas.removeEventListener("mouseup", stopDrawing);
   canvas.removeEventListener("mouseout", stopDrawing);
-  downloadImage.removeEventListener("click", () => {
-    generateImage();
-  });
+  downloadImage.removeEventListener("click", generateImage);
+  toggleToolbar.removeEventListener("click", toggleToolBar);
 }
 
 function init() {
@@ -33,9 +35,8 @@ function init() {
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", stopDrawing);
   canvas.addEventListener("mouseout", stopDrawing);
-  downloadImage.addEventListener("click", () => {
-    generateImage();
-  });
+  downloadImage.addEventListener("click", generateImage);
+  toggleToolbar.addEventListener("click", toggleToolBar);
 }
 
 init();

@@ -1,6 +1,4 @@
-const toggleToolbar = document.getElementById("toolbar");
-const toolbars = document.querySelector(".canvas-controllers");
-
-toggleToolbar.addEventListener("click", () => {
+export const toggleToolBar = () => {
+  const toolbars = document.querySelector(".canvas-controllers");
   toolbars.classList.toggle("hide");
-});
+};
