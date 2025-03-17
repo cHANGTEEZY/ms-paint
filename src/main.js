@@ -11,11 +11,16 @@ import { generateImage } from "./js/canvas/generateImage";
 import { generateColorSelectors } from "./js/color/colorsSelectorGenerator";
 import { generateStrokeButtons } from "./js/stroke/setStrokeSize";
 
+const downloadImage = document.getElementById("save");
+
 function cleanUp() {
   canvas.removeEventListener("mousedown", startDrawing);
   canvas.removeEventListener("mousemove", draw);
   canvas.removeEventListener("mouseup", stopDrawing);
   canvas.removeEventListener("mouseout", stopDrawing);
+  downloadImage.removeEventListener("click", () => {
+    generateImage();
+  });
 }
 
 function init() {
@@ -28,12 +33,9 @@ function init() {
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", stopDrawing);
   canvas.addEventListener("mouseout", stopDrawing);
+  downloadImage.addEventListener("click", () => {
+    generateImage();
+  });
 }
 
 init();
-
-const downloadImage = document.getElementById("save");
-
-downloadImage.addEventListener("click", () => {
-  generateImage();
-});

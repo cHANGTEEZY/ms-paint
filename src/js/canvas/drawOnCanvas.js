@@ -2,11 +2,9 @@ export const canvas = document.getElementById("canvas");
 const coordinates = document.getElementById("coordinates");
 export const ctx = canvas.getContext("2d");
 
-// Initial canvas settings
 canvas.width = 1200;
 canvas.height = 2000;
 
-// Changing variables that are needed for drawing
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -22,8 +20,8 @@ export function setupContext() {
 export function startDrawing(e) {
   isDrawing = true;
   coordinates.innerHTML = `x: ${e.offsetX}, y: ${e.offsetY}`;
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-
+  lastX = e.offsetX;
+  lastY = e.offsetY;
   ctx.globalCompositeOperation = isErasing ? "destination-out" : "source-over";
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
@@ -38,7 +36,8 @@ export function draw(e) {
 
   ctx.lineTo(x, y);
   ctx.stroke();
-  [lastX, lastY] = [x, y];
+  lastX = x;
+  lastY = y;
 }
 
 export function stopDrawing() {
