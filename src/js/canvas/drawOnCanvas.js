@@ -20,11 +20,15 @@ export function setupContext() {
 export function startDrawing(e) {
   isDrawing = true;
   coordinates.innerHTML = `x: ${e.offsetX}, y: ${e.offsetY}`;
+
   lastX = e.offsetX;
   lastY = e.offsetY;
   ctx.globalCompositeOperation = isErasing ? "destination-out" : "source-over";
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
+
+  ctx.lineTo(lastX, lastY);
+  ctx.stroke();
 }
 
 export function draw(e) {
@@ -36,6 +40,7 @@ export function draw(e) {
 
   ctx.lineTo(x, y);
   ctx.stroke();
+
   lastX = x;
   lastY = y;
 }
