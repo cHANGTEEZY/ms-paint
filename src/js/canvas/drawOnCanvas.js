@@ -11,6 +11,24 @@ let lastY = 0;
 let lineWidth = 2;
 let isErasing = false;
 
+const canvasStack = [];
+
+function saveCanvasState() {
+  canvasStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+  console.log(canvasStack);
+}
+
+export function undo() {
+  if (canvasStack.length >= 0) {
+    const lastState = canvasStack.pop();
+    console.log("last State popped", lastState);
+    ctx.putImageData(lastState, 0, 0);
+    console.log("Undo action - Canvas state popped:", canvasStack.length); // Log after undo
+  } else {
+    console.log("No more states to undo");
+  }
+}
+
 export function setupContext() {
   ctx.lineJoin = "round";
   ctx.lineCap = "round";
@@ -29,6 +47,7 @@ export function startDrawing(e) {
 
   ctx.lineTo(lastX, lastY);
   ctx.stroke();
+  saveCanvasState();
 }
 
 export function draw(e) {
