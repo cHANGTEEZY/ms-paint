@@ -45,6 +45,8 @@ export function startDrawing(e) {
   ctx.globalCompositeOperation = isErasing ? "destination-out" : "source-over";
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
+  ctx.lineTo(lastX, lastY);
+  ctx.stroke();
 }
 
 export function draw(e) {
