@@ -1,0 +1,9 @@
+// {
+//   "compilerOptions": {
+//     "checkJs": true,
+//     "target": "ESNext",
+//     "module": "ESNext",
+//     "allowSyntheticDefaultImports": true
+//   },
+//   "include": ["src"]
+// }

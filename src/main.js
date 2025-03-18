@@ -6,7 +6,6 @@ import {
   stopDrawing,
   draw,
   setupContext,
-  undo,
 } from "./js/canvas/drawOnCanvas";
 import { generateImage } from "./js/canvas/generateImage";
 import { generateColorSelectors } from "./js/color/colorsSelectorGenerator";
@@ -41,9 +40,3 @@ function init() {
 }
 
 init();
-
-document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.key === "z") {
-    undo();
-  }
-});
