@@ -15,7 +15,7 @@ let lineWidth = 2;
 const canvasStack = [];
 
 function saveCanvasState() {
-  if (canvasStack.length > 20) canvasStack.shift();
+  if (canvasStack.length > 100) canvasStack.shift();
   canvasStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
 }
 
