@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MS Paint Clone</title>
+    <script type="module" crossorigin src="/ms-paint/assets/index-BjedWdbH.js"></script>
+    <link rel="stylesheet" crossorigin href="/ms-paint/assets/index-CsnzAuYp.css">
+  </head>
+  <body>
+    <div class="ms-paint">
+      <header class="menu-bar">
+        <div class="title-bar">
+          <h1>MS Paint</h1>
+          <div class="window-controls">
+            <button type="button" id="minimize" class="minimize">_</button>
+            <button type="button" id="maximize" class="maximize">□</button>
+            <button type="button" id="close" class="close">×</button>
+          </div>
+        </div>
+        <nav class="menu-items">
+          <ul>
+            <li>
+              File
+              <ul class="dropdown">
+                <li id="save">Save</li>
+              </ul>
+            </li>
+            <li>
+              View
+              <ul class="dropdown">
+                <li id="toolbar">Toolbars</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="canvas-controllers">
+        <section class="color-section">
+          <h1>Color Pallet</h1>
+          <div class="color-palette" id="color-palette"></div>
+        </section>
+
+        <section class="stroke-section">
+          <h1>Stroke Size</h1>
+          <div class="stroke-size" id="stroke-size"></div>
+        </section>
+
+        <section>
+          <h1>Erase Mode</h1>
+          <div class="toggle-div" id="toggle-button">
+            <div class="toggle-content" id="toggle-circle"></div>
+          </div>
+        </section>
+
+        <section>
+          <h1>Clear Screen</h1>
+          <button type="button" class="clear-button" id="clear-canvas">
+            Clear
+          </button>
+        </section>
+      </section>
+      <main class="workspace">
+        <section class="canvas-section">
+          <div class="canvas-container">
+            <canvas id="canvas" class="drawing-board"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <footer class="status-bar">
+        <div class="coordinates" id="coordinates"></div>
+        <div class="canvas-size"></div>
+      </footer>
+    </div>
+  </body>
+</html>
